@@ -1,0 +1,46 @@
+// Листинг
+GET http://127.0.0.1:8000/api/tasks HTTP/1.1
+Content-Type: application/json
+
+{}
+
+###
+
+// Создание записи
+POST http://127.0.0.1:8000/api/tasks/create HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Task 666",
+  "description": "Something new666"
+}
+
+###
+
+// Получение одной записи
+GET http://127.0.0.1:8000/api/tasks/6 HTTP/1.1
+Content-Type: application/json
+
+{}
+
+###
+
+// Редактирование записи
+PUT http://127.0.0.1:8000/api/tasks/2/update HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Task 2",
+  "description": "Do something"
+}
+
+###
+
+// Удаление записи
+DELETE http://127.0.0.1:8000/api/tasks/7 HTTP/1.1
+Content-Type: application/json
+
+{}
+
+###
+
