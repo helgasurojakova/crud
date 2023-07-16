@@ -36,6 +36,12 @@ class TaskController extends AbstractController
   {
     $task = $taskRepository->find($id);
 
+    if ($task === null) {
+      $response = new JsonResponse("Запись не найдена.", 200, [], true);
+      $response->setContent(json_encode("Запись не найдена.", JSON_UNESCAPED_UNICODE));
+      return $response;
+    }
+
     $data = [
       'id' => $task->getId(),
       'title' => $task->getTitle(),
