@@ -1,6 +1,29 @@
+// Авторизация
+POST http://127.0.0.1:8000/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "user@mail.ru",
+  "password": "password123"
+}
+
+###
+
+// Регистрация
+POST http://127.0.0.1:8000/api/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "user@mail.ru",
+  "password": "password123"
+}
+
+###
+
 // Листинг
 GET http://127.0.0.1:8000/api/tasks HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODk2MTYxODMsImV4cCI6MTY4OTYxOTc4Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXNlckBtYWlsLnJ1In0.Aa68yY6ePhTRNi25ZLh0xGVGoq5_BVj_h6sZTyRpMf9_OYqi17Lz4N91lYMgWdEGBZJHZ__iBjvQ1I9pi-13hjvWAbFxQyg2K4xqL62y2F7Y5gPqkEZ31lZ9jZ9X61blydPGlVe-EEC4A6LjtdOb57gQJpRa3cpGLQN4-byTnraI69M70010qbiA0L4U5EWYoQubqcKPZWPyP7ZqkSEsnaL19HMlWuvoduIStd5a2GM8M4bO6uuW2xganrq7lCfffoMdmjjpglFqTTs4xDaj8xQw_et4kPs37IKrlKysRgXXDmT45Fb3C7sxs2QFawNqbeTR-oLHxX5gKhPGS3oTvw
 
 {}
 
@@ -9,6 +32,7 @@ Content-Type: application/json
 // Создание записи
 POST http://127.0.0.1:8000/api/tasks/create HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer
 
 {
   "title": "Task 3",
@@ -20,6 +44,7 @@ Content-Type: application/json
 // Получение одной записи
 GET http://127.0.0.1:8000/api/tasks/6 HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer
 
 {}
 
@@ -28,6 +53,7 @@ Content-Type: application/json
 // Редактирование записи
 PUT http://127.0.0.1:8000/api/tasks/2/update HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer
 
 {
   "title": "Task 2",
@@ -39,6 +65,7 @@ Content-Type: application/json
 // Удаление записи
 DELETE http://127.0.0.1:8000/api/tasks/7 HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer
 
 {}
 
